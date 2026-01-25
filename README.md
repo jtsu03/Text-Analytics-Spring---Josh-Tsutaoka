@@ -1,76 +1,68 @@
-# Text-Analytics-Spring---Josh-Tsutaoka
+📊 Text Analytics — Spring 2026
 
+Student: Josh Tsutaoka
+University: Loyola Marymount University
+Course: Text Mining & Social Media Analytics
+Semester: Spring 2026
+Instructor: Ace Vo
 
+📌 Repository Overview
 
-\# Text Analytics Spring 2026
+This repository contains coursework and projects completed for Text Mining & Social Media Analytics during Spring 2026. Each assignment applies Natural Language Processing (NLP) techniques in Python to analyze and extract insights from textual data.
 
-\*\*Student:\*\* Josh Tsutaoka
+The work emphasizes:
 
-\*\*University:\*\* Loyola Marymount University
+Practical text analytics methods
 
-\*\*Course:\*\* Text Mining \& Social Media Analytics
+Model comparison and evaluation
 
-\*\*Semester:\*\* Spring 2026
+Clear communication of results
 
-\*\*Instructor:\*\* Ace Vo
+📂 Assignments
+📝 Assignment 1: Sentiment Analysis
 
+Focus: Comparing rule-based and lexicon-based sentiment analysis methods
 
+Techniques: VADER vs TextBlob
 
-\## About This Repository
+Key Skills:
 
-This repository contains my coursework for Text Analytics (Spring
+Text preprocessing
 
-2026).
+Sentiment scoring and comparison
 
-Each assignment demonstrates different NLP techniques using Python.
+Result interpretation and visualization
 
+Notebook: View Assignment →
 
+🧠 Skills Demonstrated
 
-\## Assignments
+Python programming for text analytics
 
+Natural Language Processing (NLP)
 
+Sentiment analysis techniques
 
-\### Assignment 1: Sentiment Analysis 
+Data visualization and interpretation
 
-\- \*\*Topic:\*\* Comparing VADER and TextBlob sentiment analysis
+Version control with Git/GitHub
 
-\- \*\*Dataset:\*\* \[Dataset name]
+Clear technical documentation
 
-\- \*\*Key Skills:\*\* Text preprocessing, sentiment analysis, model comparison
+AI-assisted development workflows
 
-\- \*\*\[View Assignment →](assignment1/)\*\*
+🧰 Tools & Libraries
 
+Python 3.9+
 
+Jupyter Notebooks
 
-\## Skills Demonstrated
+Core Libraries: pandas, numpy
 
-\- Python programming
+Machine Learning: scikit-learn
 
-\- Natural Language Processing
+NLP: VADER, TextBlob
 
-\- Data visualization
+🚀 Notes
 
-\- Git version control
-
-\- Technical documentation
-
-\- AI-assisted development
-
-
-
-\## Tools \& Libraries
-
-\- Python 3.9+
-
-\- Jupyter Notebooks
-
-\- pandas, numpy
-
-\- scikit-learn
-
-\- VADER, TextBlob
-
-\- matplotlib, seaborn
-
-
-
+This repository is part of a broader portfolio focused on applied analytics, machine learning, and NLP, with an emphasis on turning unstructured data into actionable insights.
