@@ -1,9 +1,13 @@
 📊 Text Analytics — Spring 2026
 
 Student: Josh Tsutaoka
+
 University: Loyola Marymount University
+
 Course: Text Mining & Social Media Analytics
+
 Semester: Spring 2026
+
 Instructor: Ace Vo
 
 📌 Repository Overview
