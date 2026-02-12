@@ -23,6 +23,7 @@ Model comparison and evaluation
 Clear communication of results
 
 📂 Assignments
+
 📝 Assignment 1: Sentiment Analysis
 
 Focus: Comparing rule-based and lexicon-based sentiment analysis methods
