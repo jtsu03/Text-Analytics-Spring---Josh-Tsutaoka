@@ -1,94 +1,101 @@
 # Sentiment Analysis Model Comparison
-**VADER vs TextBlob vs Transformer**
-
-## Project Summary
-This project compares three sentiment analysis approaches on real user review text and evaluates how closely each model matches human interpretation.
-
-Rather than focusing only on accuracy, the goal is to understand the tradeoffs between speed, linguistic understanding, and contextual reasoning across different generations of NLP models.
-
-Models compared:
-- **VADER** — rule-based lexicon model
-- **TextBlob** — traditional polarity scoring model
-- **Transformer (HuggingFace)** — pretrained deep learning model
+### Human Labels vs VADER vs TextBlob vs Transformer
 
 ---
 
-## Dataset
-The dataset consists of natural language user reviews containing opinions about a product or experience. The text is informal and varies significantly in writing style, making it useful for evaluating real-world sentiment interpretation.
+## Project Overview
+This project evaluates how well different sentiment analysis approaches interpret human opinion in text.  
+Rather than relying on model outputs alone, I manually labeled sentiment to create a ground truth dataset and compared multiple NLP approaches against human judgment.
 
-Challenges present in the data:
-- Negation ("not bad")
-- Emphasis (capitalization and punctuation)
-- Mixed sentiment ("worked but caused side effects")
-- Context-dependent meaning
+The objective is to determine whether more advanced models truly understand meaning better or simply produce different statistical predictions.
 
-A subset of reviews was manually labeled to create a ground-truth benchmark.
-
-**Sentiment labels**
-- Positive
-- Neutral
-- Negative
+Models evaluated:
+- VADER (rule-based sentiment)
+- TextBlob (polarity scoring)
+- HuggingFace Transformer (contextual deep learning)
 
 ---
 
-## Methodology
+## Dataset Description
 
-### 1. Preprocessing
-Text was lightly cleaned while preserving emotional cues:
-- Removed URLs and noise characters
-- Normalized spacing
-- Lowercased text
-- Preserved punctuation important for sentiment
+### Source
+The data comes from the Kaggle dataset:
 
-### 2. Model Predictions
-Each model generated sentiment labels for the same reviews.
-
-**VADER**
-- Uses a sentiment dictionary and linguistic rules
-- Accounts for punctuation, capitalization, and negation
-
-**TextBlob**
-- Calculates polarity based on learned word patterns
-
-**Transformer**
-- Uses contextual embeddings to interpret full sentence meaning
-
-### 3. Evaluation
-Models were compared against human labels using:
-- Accuracy
-- Agreement analysis
-- Example successes
-- Example failures
+**KUC Hackathon Winter 2018 – Drug Review Dataset**  
+https://www.kaggle.com/datasets/jessicali9530/kuc-hackathon-winter-2018
 
 ---
 
-## Results
+### Original Dataset
+The original dataset contains user written drug reviews collected from an online medical review platform.
 
-| Criterion | VADER | TextBlob | Transformer |
-|----------|------|------|------|
-| Speed | Fastest | Moderate | Slowest |
-| Accuracy | Good | Moderate | Highest |
-| Emphasis handling | Strong | Weak | Good |
-| Negation handling | Moderate | Better | Good |
-| Context understanding | Limited | Limited | Strong |
+Each record includes:
 
----
+- `drugName` — medication name
+- `condition` — condition being treated
+- `review` / `text` — written user experience
+- `rating` — numerical score from 1–10
+- `date`
+- `usefulCount` — number of helpful votes
 
-## Key Takeaways
-- **VADER** performs well when speed is required and text relies heavily on punctuation.
-- **TextBlob** handles simple negation better but lacks contextual awareness.
-- **Transformer** produces the most human-like predictions but requires significantly more computation.
-
-There is no universally best model — the correct choice depends on whether performance or interpretability is more important.
+The full dataset contains thousands of reviews with mixed sentiment strength.
 
 ---
 
-## Technologies
-Python, Pandas, NLTK, TextBlob, HuggingFace Transformers, Scikit-learn
+### Dataset Used in This Project
+For clearer sentiment evaluation, the dataset was filtered to include only extreme opinions:
+
+- Rating **10 → Positive sentiment**
+- Rating **1 → Negative sentiment**
+
+This reduces ambiguity and allows models to be tested on clear emotional language before comparing them against human interpretation.
+
+Then a subset of **100 reviews** was manually labeled to create a ground truth evaluation dataset.
 
 ---
 
-## How to Run
-1. Open `Text_Mining_Sentiment_Analysis_Assignment_1.ipynb`
-2. Run all cells sequentially
-3. View the comparison table and error analysis
+### Final Evaluation Fields
+Each record in the final dataset includes:
+
+- `text` — original review text
+- `human_label` — manually assigned sentiment
+- `vader_label`
+- `tb_label`
+- `hf_label`
+- model confidence scores
+
+Human labels were created first and treated as the ground truth so model performance reflects agreement with human understanding rather than agreement with other models.
+
+---
+
+## Quantitative Results
+
+| Model | Accuracy |
+|------|------|
+| **VADER** | **58%** |
+| **TextBlob** | 55% |
+| **Transformer** | 52% |
+
+---
+
+## Model Comparison
+
+| Criterion | VADER | TextBlob | Transformer | Winner | Justification |
+|------|------|------|------|------|------|
+| Speed | 0.07 sec / 500 reviews | 0.05 sec / 500 reviews | 0.61 sec / 500 reviews | TextBlob | Lower runtime is faster |
+| Accuracy (human labels) | 58% | 55% | 52% | VADER | Highest agreement with human labels |
+| Handles emphasis (caps/punctuation) | Excellent | Weak | Good | VADER | Rule based intensity handling |
+| Handles negation | Good | Better | Good | TextBlob | Better polarity shifts for phrases like "not bad" |
+| Context understanding | Weak | Weak | Strong | Transformer | Learns contextual meaning |
+
+---
+
+## Key Findings Summary
+- VADER achieved the highest raw accuracy
+- TextBlob handled polarity shifts better than VADER
+- The Transformer best understood contextual meaning
+- Accuracy alone did not reflect true language understanding
+- Complex language separated model performance more than simple sentences
+
+Overall:  
+The Transformer most closely matched human reasoning in nuanced cases even though it had the lowest accuracy score.
