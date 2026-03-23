@@ -39,28 +39,7 @@ for. This produced more accurate responses with less back and forth debugging.
 
 ---
 
-## Task 1: Data Loading
-**What I was trying to do:**  
-Load the Fake and Real News dataset from Kaggle using kagglehub.
-
-**AI Prompt:**  
-"how do i load the fake and real news dataset from kaggle using kagglehub"
-
-**AI Response Used:**  
-Provided the correct kagglehub load syntax with KaggleDatasetAdapter.PANDAS 
-and the dataset handle and file path arguments.
-
-**What I Modified:**  
-Adjusted file paths to match True.csv and Fake.csv based on the actual dataset 
-structure after checking what files were available.
-
-**What I Learned:**  
-The load_dataset function requires three arguments — adapter type, dataset handle, 
-and specific file path. Passing an empty string caused the TypeError I hit initially.
-
----
-
-## Task 2: Combining and Labeling Data
+## Task 1: Combining and Labeling Data
 **What I was trying to do:**  
 Add labels to each dataframe and combine them into one shuffled dataset.
 
@@ -85,7 +64,7 @@ dataframes.
 
 ---
 
-## Task 3: Fixing Shape Error
+## Task 2: Fixing Shape Error
 **What I was trying to do:**  
 Print the shape of the dataframes after loading.
 
@@ -106,7 +85,7 @@ use parentheses. Methods like head(), describe(), and info() do.
 
 ---
 
-## Task 4: Text Cleaning Pipeline
+## Task 3: Text Cleaning Pipeline
 **What I was trying to do:**  
 Build a domain-appropriate cleaning function for formal news text.
 
@@ -131,7 +110,7 @@ does not rely on emphasis signals the way sentiment text does.
 
 ---
 
-## Task 5: Feature Engineering Comparison
+## Task 4: Feature Engineering Comparison
 **What I was trying to do:**  
 Compare TF-IDF and Count Vectorizer to justify my feature choice.
 
@@ -153,7 +132,7 @@ classes and carry no discriminating signal.
 
 ---
 
-## Task 6: Model Training
+## Task 5: Model Training
 **What I was trying to do:**  
 Train Logistic Regression, Linear SVM, and Naive Bayes on TF-IDF features 
 with class imbalance handling.
@@ -177,7 +156,7 @@ require a different approach.
 
 ---
 
-## Task 7: Hyperparameter Tuning
+## Task 6: Hyperparameter Tuning
 **What I was trying to do:**  
 Tune Logistic Regression before asking for help I tried setting up a small 
 manual grid testing C values of 0.1, 1, and 10.
@@ -206,14 +185,13 @@ the search. The tuned model improved F1 from 0.9919 to 0.9976 on the Fake class.
 
 ---
 
-## Task 8: Identifying High F1 as a Concern
+## Task 7: Identifying High F1 as a Concern
 **What I was trying to do:**  
 Understand why test F1 was near perfect.
 
 **My Analysis Before AI:**  
 I flagged this independently before asking Claude. I reasoned that real and fake 
-articles came from completely different sources — Reuters wire copy vs partisan 
-blogs — and that TF-IDF was probably picking up on vocabulary style patterns 
+articles came from completely different sources and that TF-IDF was probably picking up on vocabulary style patterns 
 rather than actual misinformation signals. This was confirmed when the same model 
 dropped to 65% on 20 fresh AI-generated examples.
 
