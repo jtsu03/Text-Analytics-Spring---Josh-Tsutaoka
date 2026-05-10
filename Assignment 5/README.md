@@ -151,29 +151,6 @@ The main weakness was document-specific retrieval. The chatbot sometimes struggl
 
 Future improvements would include increasing the number of retrieved chunks, adding metadata filtering by document type, and adding more project write-ups to improve answer depth.
 
-## 8. File Descriptions
-
-```text
-bsan6200-assignment5/
-├── README.md
-├── memo.md
-├── ai_log.md
-├── requirements.txt
-├── .gitignore
-├── streamlit_app.py
-├── Resume.pdf
-├── cover_letter.pdf
-├── Linkedin_about.txt
-├── notebooks/
-│   └── rag_pipeline.ipynb
-└── evaluation/
-    └── evaluation_results.csv
-```
-
-### `README.md`
-
-Provides an overview of the project, setup instructions, tools used, key findings, and file descriptions.
-
 ### `memo.md`
 
 Technical memo summarizing the project design, methodology, evaluation results, limitations, and future improvements.
@@ -210,21 +187,6 @@ Professional summary used as an additional source document for background, skill
 
 Main development notebook. It includes document loading, chunking strategy comparison, embedding creation, vector store testing, retrieval chain construction, prompt testing, and evaluation.
 
-### `evaluation/evaluation_results.csv`
-
-Stores the chatbot evaluation results across 10 test questions, including retrieval quality, answer faithfulness, and answer quality scores.
-
-## Project Workflow
-
-The final RAG pipeline follows this process:
-
-```text
-User question
-→ Retrieve relevant document chunks from ChromaDB
-→ Insert retrieved chunks into grounded prompt
-→ Generate answer with OpenAI gpt-4o-mini
-→ Display answer and retrieved chunks in Streamlit
-```
 
 ## Final Notes
 
