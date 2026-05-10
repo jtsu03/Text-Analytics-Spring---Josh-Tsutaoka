@@ -1,0 +1,7 @@
+I'm an MSBA candidate at Loyola Marymount University graduating August 2026, with a background in Economics from Gonzaga and hands-on experience turning messy, multi-source data into structured outputs that help people make better decisions.
+ 
+My work spans donor analytics at a data consultancy, program effectiveness analysis at a nonprofit, and academic research involving large-scale web scraping and NLP. On the project side I've built a county-level gun violence early warning system deployed on Streamlit, a three-stage healthcare cost prediction pipeline on 274,000+ patient records, and a pediatric medication safety analysis using Poison Control Center data.
+ 
+I'm actively seeking full-time Data Analyst or Business Analyst roles in Seattle, Los Angeles, San Francisco, or Denver — ideally at the intersection of data and stakeholders, where the analysis actually drives decisions.
+
+Portfolio: github.com/jtsu03/Josh_Tsutaoka_data_analytics_portfolio
